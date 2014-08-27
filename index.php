@@ -1,0 +1,1 @@
+<h1 align="center">SixFigurePlan<br /><small>Website under construction.</small></h1>

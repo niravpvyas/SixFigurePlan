@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>LiveValidation functional tests (compressed standalone version)</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  
+  <link rel="stylesheet" href="../css/standard.css" type="text/css" />
+  <link rel="stylesheet" href="../css/test.css" type="text/css" />
+  <link rel="stylesheet" href="../css/validation.css" type="text/css" />
+  
+  <!--  the LiveValidation source to be tested -->
+  <script type="text/javascript" src="../../src/livevalidation_standalone.compressed.js"></script>
+  
+  <style type="text/css">
+    .section h3 { background-color:#cccccc; padding:3px; }
+    input.submit { color: #666666; }
+  </style>
+  
+</head>
+<body>
+
+  
+		<form>
+			<legend>Example of form validation</legend>
+			<p><label for="field1">Email:</label><br /><input type="text" id="field1" /></p>
+			<p><label for="field2">Acceptance:</label><br /><input type="checkbox" id="field2" class="checkbox" /></p>
+			<p><label for="field3">Presence:</label><br /><textarea  id="field3" class="shallow" rows="2" cols="10"></textarea></p>
+		    <p><input type="submit" class="submit" value="Test me!" /></p>
+		</form>
+	    <script type="text/javascript">
+			var field1 = new LiveValidation( 'field1', {onlyOnSubmit: true } );
+			field1.add( Validate.Email );
+			var field2 = new LiveValidation( 'field2', {onlyOnSubmit: true } );
+			field2.add( Validate.Acceptance );
+			var field3 = new LiveValidation( 'field3', {onlyOnSubmit: true } );
+			field3.add( Validate.Presence );
+</script> 
+  
+</body>
+</html>
